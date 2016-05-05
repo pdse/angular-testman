@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="testTreeApp">
+<head>
+	<title>Test Tree</title>
+	<script src="angular.js"></script>
+	<link href="bootstrap.css" rel="stylesheet" />
+	<link href="bootstrap-theme.css" rel="stylesheet" />
+	<script src="controllers/testTree.js"></script>
+</head>
+<body ng-controller="treeCtrl">
+	<div class="panel panel-primary">
+		<h3 class="panel-heading">Test Tree</h3>
+		<div>
+			<ng-include src="'views/treeView.html'"></ng-include>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="testManApp">
+<head>
+	<title>Test Tree</title>
+	<script src="angular.js"></script>
+	<script src="ngmodules/angular-resource.js"></script>
+	<script src="angular-tree-control.js"></script>
+	<link href="bootstrap.css" rel="stylesheet" />
+	<link href="bootstrap-theme.css" rel="stylesheet" />
+	<link href="tree-control.css" rel="stylesheet" />
+	<script src="controllers/testTree.js"></script>
+</head>
+<body ng-controller="treeCtrl">
+	<div class="navbar navbar-inverse">
+		<a class="navbar-brand" href="#">TEST POOL</a>
+	</div>
+
+	<div class="panel panel-default row">
+		<div class="col-xs-4">
+			<treecontrol 	class="tree-classic"
+							tree-model="data.tree"
+							on-selection="showSelected(node)"
+							selected-node="node1">
+							{{node.level}} name: {{node.name}}; id: {{node.id}}
+			</treecontrol> 
+			<div>
+				<ul ng-repeat="feature in featureList">
+					<li>{{feature}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-xs-8">
+			<div class="well" ng-repeat="item in data.testcases">
+				<h3>
+					<strong>{{item.name}}</strong>
+					<span class="pull-right label label-primary">
+						{{item.test_id}}
+					</span>					
+				</h3>
+				<span class="lead">{{item.description}}</span>
+				<ul ng-repeat="step in item.steps">
+					<li>{{step}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

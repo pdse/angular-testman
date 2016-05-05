@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+	<title>Domains</title>
+	<script src="angular.js"></script>
+	<script src="ngmodules/angular-resource.js"></script>
+	<script src="ngmodules/angular-route.js"></script>
+	<link href="bootstrap.css" rel="stylesheet" />
+	<link href="bootstrap-theme.css" rel="stylesheet" />
+	<script src="controllers/domains.js"></script>
+</head>D
+<body ng-controller="defaultCtrl">
+	<div class="panel panel-primary">
+		<h3 class="panel-heading">Domains</h3>
+		<div ng-view></div>
+<!-- 		<ng-include src="'views/tableView.html'" ng-show="displayMode == 'list'"></ng-include>
+		<ng-include src="'views/editorView.html'" ng-show="displayMode == 'edit'"></ng-include> -->
+	</div>
+</body>
+</html>
